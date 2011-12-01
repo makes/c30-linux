@@ -1,0 +1,29 @@
+--- pic30-binutils/acme/bfd/coff-pic30.c.orig	2011-11-27 11:20:07.000000000 +0000
++++ pic30-binutils/acme/bfd/coff-pic30.c	2011-11-27 11:25:56.000000000 +0000
+@@ -2352,7 +2352,7 @@
+         break;
+       case R_PIC30_PCREL_BRANCH_SLIT6:
+         /* valid range is [-32..31] and not [-2, -1, 0] */
+-        if ((relocation > 0x1F) && ~(relocation | 0xC000001F))
++        if ((relocation > 0x1F) && ~(relocation | ((~0) - 0x3FFFFFE0)))
+           {
+             *error_msg = (char *) malloc(BUFSIZ);
+             sprintf(*error_msg,
+@@ -2364,7 +2364,7 @@
+       case R_PIC30_PCREL_BRANCH:
+       case R_PIC30_BRANCH_ABSOLUTE:
+         /* valid range is [-32768..32767] and not [-2, -1, 0] */
+-        if ((relocation > 0x7FFF) && ~(relocation | 0xC0007FFF))
++        if ((relocation > 0x7FFF) && ~(relocation | ((~0) - 0x3FFF8000)))
+           {
+             *error_msg = (char *) malloc(BUFSIZ);
+             sprintf(*error_msg,
+@@ -2377,7 +2377,7 @@
+       case R_PIC30_PCREL_DO:
+       case R_PIC30_DO_ABSOLUTE:
+         /* valid range is [-32768..32767] and not [-2, -1, 0] */
+-        if ((relocation > 0x7FFF) && ~(relocation | 0xC0007FFF))
++        if ((relocation > 0x7FFF) && ~(relocation | ((~0) - 0x3FFF8000)))
+           {
+             *error_msg = (char *) malloc(BUFSIZ);
+             sprintf(*error_msg,

@@ -1,0 +1,13 @@
+--- pic30-gcc/gcc-4.0.2/gcc-4.0.2/libiberty/make-relative-prefix.c.orig	2011-11-27 07:20:19.000000000 +0000
++++ pic30-gcc/gcc-4.0.2/gcc-4.0.2/libiberty/make-relative-prefix.c	2011-11-27 07:22:50.000000000 +0000
+@@ -321,7 +321,9 @@
+ 	    break;
+ 	}
+ 
+-      if (prog_num <= 0 || i == bin_num)
++      /* Force function to specify relative directories even if we're
++         installed in standard location */
++      if (prog_num <= 0)
+ 	{
+ 	  free_split_directories (prog_dirs);
+ 	  free_split_directories (bin_dirs);

@@ -1,0 +1,50 @@
+--- pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config/pic30/pic30.c.orig	2011-11-27 06:34:03.000000000 +0000
++++ pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config/pic30/pic30.c	2011-12-01 04:42:08.000000000 +0000
+@@ -2515,6 +2515,7 @@
+     flag_tree_loop_optimize = 0;
+   }
+ #endif
++#ifdef LICENSE_MANAGER
+   if (pic30_license_valid < 0) {
+     /* an invalid license, 
+        disable those optimizations turned on by -O2,-O3,-Os */
+@@ -2528,7 +2529,6 @@
+               invalid); \
+     X
+ 
+-#ifdef LICENSE_MANAGER
+     if (pic30_license_valid == LMR_LICENSEEXPIRED) invalid = (char*) "expired";
+     else if (pic30_license_valid == LMR_ACADEMICVERSION) {
+       // lite key, silence the errors
+@@ -2543,7 +2543,7 @@
+     } else {
+       warning("General License error, please install a license\n");
+     }
+-#endif
++
+     NULLIFY(flag_optimize_sibling_calls) = 0;
+     NULLIFY(flag_cse_follow_jumps) = 0;
+     NULLIFY(flag_cse_skip_blocks) = 0;
+@@ -2570,6 +2570,7 @@
+ 
+     #undef NULLIFY
+   }
++#endif
+   if (pic30_it_option) {
+     /* enable instrumented trace */
+     char *option,*c;
+@@ -10291,12 +10292,12 @@
+ /*
+ ** Calculate the offset between two frame registers.
+ */
+-void pic30_initial_elimination_offset(int from, int to, int *poffset) {
++void pic30_initial_elimination_offset(int from, int to, HOST_WIDE_INT *poffset) {
+   int fLeaf;
+   int fInterrupt;
+   int nLastReg;
+   int regno;
+-  int nOffset;
++  HOST_WIDE_INT nOffset;
+ 
+   fLeaf = current_function_is_leaf;
+   fInterrupt = pic30_interrupt_function_p(current_function_decl);

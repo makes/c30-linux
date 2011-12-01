@@ -1,0 +1,9 @@
+MPLAB C Compiler for PIC24 MCUs and dsPIC DSCs (MPLAB C30) v3.30b / v3.30c
+
+Compiler sources from Microchip, adapted for Linux. For installation
+instructions, see 'INSTALL' file.
+
+The patches are based on the work found in:
+    http://www.electricrock.co.nz/blog/microchip-c30/
+    http://code.google.com/p/pic30/
+ 

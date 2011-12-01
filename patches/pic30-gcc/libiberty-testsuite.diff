@@ -1,0 +1,23 @@
+--- pic30-gcc/gcc-4.0.2/gcc-4.0.2/libiberty/Makefile.in.orig	2011-11-27 07:10:02.000000000 +0000
++++ pic30-gcc/gcc-4.0.2/gcc-4.0.2/libiberty/Makefile.in	2011-11-27 07:10:35.000000000 +0000
+@@ -102,7 +102,7 @@
+ 	"tooldir=$(tooldir)"
+ 
+ # Subdirectories to recurse into. We need to override this during cleaning
+-SUBDIRS = testsuite
++SUBDIRS = 
+ 
+ # FIXME: add @BUILD_INFO@ once we're sure it works for everyone.
+ all: stamp-picdir $(TARGETLIB) needed-list required-list all-subdir
+
+--- pic30-gcc/gcc-4.0.2/gcc-4.0.2/libiberty/configure.orig	2011-11-27 07:14:56.000000000 +0000
++++ pic30-gcc/gcc-4.0.2/gcc-4.0.2/libiberty/configure	2011-11-27 07:16:38.000000000 +0000
+@@ -7184,7 +7184,7 @@
+ LIBOBJS="$L"
+ 
+ # We need multilib support, but only if configuring for the target.
+-                    ac_config_files="$ac_config_files Makefile testsuite/Makefile"
++                    ac_config_files="$ac_config_files Makefile"
+ 
+           ac_config_commands="$ac_config_commands default"
+ 

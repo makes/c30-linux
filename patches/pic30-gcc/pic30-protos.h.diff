@@ -1,0 +1,11 @@
+--- pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config/pic30/pic30-protos.h.orig	2011-12-01 04:45:07.000000000 +0000
++++ pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config/pic30/pic30-protos.h	2011-12-01 04:45:10.000000000 +0000
+@@ -93,7 +93,7 @@
+ extern void pic30_override_options(void);
+ extern void pic30_sdb_end_prologue(unsigned int);
+ extern void pic30_start_source_file(unsigned int, const char *);
+-extern void pic30_initial_elimination_offset(int, int, int *);
++extern void pic30_initial_elimination_offset(int, int, HOST_WIDE_INT *);
+ extern char *pic30_text_section_asm_op(void);
+ extern char *pic30_data_section_asm_op(void);
+ extern char *pic30_const_section_asm_op(void);

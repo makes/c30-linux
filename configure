@@ -1,0 +1,13 @@
+#! /bin/bash
+
+if [ -z "$1" ]
+then
+    prefix="/usr/local/pic30"
+else
+    prefix=$1
+fi
+
+echo $prefix > install_prefix
+echo "Configured install location: $prefix"
+
+exec scripts/configure.sh $prefix

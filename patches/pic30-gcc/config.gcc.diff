@@ -1,0 +1,22 @@
+--- pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config.gcc.orig	2011-11-29 04:24:22.000000000 +0000
++++ pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config.gcc	2011-11-29 04:25:38.000000000 +0000
+@@ -1562,8 +1562,7 @@
+ 	;;
+ pic30-*-coff)
+         host_can_use_collect2=no
+-        host_xm_defines="PROGRAM_PREFIX=\\\"pic30-\\\" ${host_xm_defines}"
+-        host_xm_defines="OMF=\\\"coff\\\" ${host_xm_defines}"
++        host_xm_defines="PROGRAM_PREFIX=\\\"${program_prefix}\\\" ${host_xm_defines}"
+         extra_modes=pic30/pic30-modes.h
+         LANGUAGES="c"
+         LIBGCCMK=
+@@ -1572,8 +1571,7 @@
+         host_can_use_collect2=no
+         elf=yes
+         tm_defines="OBJECT_FORMAT_ELF $tm_defines"
+-        host_xm_defines="PROGRAM_PREFIX=\\\"pic30-\\\" ${host_xm_defines}"
+-        host_xm_defines="OMF=\\\"elf\\\" ${host_xm_defines}"
++        host_xm_defines="PROGRAM_PREFIX=\\\"${program_prefix}\\\" ${host_xm_defines}"
+         extra_modes=pic30/pic30-modes.h
+         LANGUAGES="c"
+         LIBGCCMK=

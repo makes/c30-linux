@@ -1,0 +1,29 @@
+--- pic30-binutils/acme/bfd/elf32-pic30.c.orig	2011-11-27 11:30:30.000000000 +0000
++++ pic30-binutils/acme/bfd/elf32-pic30.c	2011-11-27 11:31:37.000000000 +0000
+@@ -2480,7 +2480,7 @@
+         break;
+       case R_PIC30_PCREL_BRANCH_SLIT6:
+         /* valid range is [-32..31] */
+-        if ((relocation > 0x1F) && ~(relocation | 0xC000001F))
++        if ((relocation > 0x1F) && ~(relocation | ((~0) - 0x3FFFFFE0)))
+           {
+             *error_msg = (char *) malloc(BUFSIZ);
+             sprintf(*error_msg,
+@@ -2492,7 +2492,7 @@
+       case R_PIC30_PCREL_BRANCH:
+       case R_PIC30_BRANCH_ABSOLUTE:
+         /* valid range is [-32768..32767] and not [-2, -1, 0] */
+-        if ((relocation > 0x7FFF) && ~(relocation | 0xC0007FFF))
++        if ((relocation > 0x7FFF) && ~(relocation | ((~0) - 0x3FFF8000)))
+           {
+             *error_msg = (char *) malloc(BUFSIZ);
+             sprintf(*error_msg,
+@@ -2505,7 +2505,7 @@
+       case R_PIC30_PCREL_DO:
+       case R_PIC30_DO_ABSOLUTE:
+         /* valid range is [-32768..32767] and not [-2, -1, 0] */
+-        if ((relocation > 0x7FFF) && ~(relocation | 0xC0007FFF))
++        if ((relocation > 0x7FFF) && ~(relocation | ((~0) - 0x3FFF8000)))
+           {
+             *error_msg = (char *) malloc(BUFSIZ);
+             sprintf(*error_msg,

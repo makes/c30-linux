@@ -1,0 +1,38 @@
+1. Run configure:
+      ./configure [installdir]
+   If you don't specify installdir, the default '/usr/local/pic30' will be used.
+   The patches will also be applied.
+
+2. Run make:
+      make
+   This will compile binutils and gcc.
+
+3. Run make install:
+      sudo make install
+   This installs binutils and gcc to the specified '<installdir>'.
+
+   If the 'pic30-nonfree' directory is not empty, it will be copied to
+   '<installdir>/pic30-nonfree'.
+
+   The non-free components by Microchip cannot be distributed here due to
+   licensing conditions.
+
+   The 'pic30-nonfree' directory should contain the following items from a
+   C30 Windows installation in order to get a working compiler:
+
+   pic30-nonfree
+   |
+   +- bin
+   |  |
+   |  +- c30_device.info
+   |  +- device_files
+   |
+   +- include
+   +- lib
+   +- support
+
+To install the non-free components separately, run
+   make nonfree
+
+To clean up the source tree and configuration info, run
+   make clean

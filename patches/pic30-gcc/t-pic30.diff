@@ -1,0 +1,17 @@
+--- pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config/pic30/t-pic30.orig	2011-11-27 08:06:12.000000000 +0000
++++ pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config/pic30/t-pic30	2011-11-27 08:09:11.000000000 +0000
+@@ -1,8 +1,8 @@
+-LIBGCC1 = libgcc1.null
+-CROSS_LIBGCC1 = libgcc1.null
++# Replacement t-pic30, by John Steele Scott
++# 22/2/2004
++# The original t-pic30 file from Microchip C30 1.30 has no effect. This one
++# lets the build succeed by disabling the libgcc target.
+ 
+-# forget the libgcc1...
+-LIBGCC1_TEST =
+-
+-LIBGCC2 = libgcc1.null
++LIBGCC = 
++INSTALL_LIBGCC = 
+ 

@@ -1,0 +1,11 @@
+--- pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config/pic30/pic30.h.orig	2011-11-27 07:47:20.000000000 +0000
++++ pic30-gcc/gcc-4.0.2/gcc-4.0.2/gcc/config/pic30/pic30.h	2011-11-28 14:55:25.000000000 +0000
+@@ -225,7 +225,7 @@
+ */
+ #define ASM_SPEC   "%{!.s:%{!.S:--relax}} %{mcpu=*:-p%*}"
+ 
+-#define CC1_SPEC  "-mresource=%I-../../c30_device.info"
++#define CC1_SPEC  "-mresource=%I-../../../../../c30_device.info"
+ 
+ #define LINK_SPEC   "%{mcpu=*:-p%*}"
+ 
