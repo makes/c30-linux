@@ -68,3 +68,19 @@ ln -s $prefix/pic30-nonfree/bin/device_files $prefix/libexec/gcc/pic30-coff/4.0.
 rm -f $prefix/libexec/gcc/pic30-coff/4.0.3/c30_device.info
 ln -s $prefix/pic30-nonfree/bin/c30_device.info $prefix/libexec/gcc/pic30-coff/4.0.3/
 
+# Try to install procedural abstractor.
+if [ ! -f pic30-nonfree/bin/pic30-coff-pa ];
+then
+    echo "warning: pic30-nonfree/bin/pic30-coff-pa was not found."
+else
+    rm -f $prefix/bin/pic30-coff-pa
+    ln -s $prefix/pic30-nonfree/bin/pic30-coff-pa $prefix/bin/
+fi
+
+if [ ! -f pic30-nonfree/bin/pic30-elf-pa ];
+then
+    echo "warning: pic30-nonfree/bin/pic30-elf-pa was not found."
+else
+    rm -f $prefix/bin/pic30-elf-pa
+    ln -s $prefix/pic30-nonfree/bin/pic30-elf-pa $prefix/bin/
+fi
