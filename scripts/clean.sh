@@ -1,12 +1,12 @@
 #!/bin/bash
 
-rm -fd install_prefix
-rm -fd build_done
+rm -f install_prefix
+rm -f build_done
 cd pic30-binutils/
-rm -fdr coff-build
-rm -fdr elf-build
+rm -fr coff-build
+rm -fr elf-build
 cd ../pic30-gcc/
-rm -fdr coff-build
-rm -fdr elf-build
+rm -fr coff-build
+rm -fr elf-build
 cd ..
 
