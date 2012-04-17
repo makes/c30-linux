@@ -58,12 +58,14 @@ then
     echo "warning: pic30-nonfree/support was not found."
 fi
 
-rm -fdr $prefix/pic30-nonfree
+rm -fr $prefix/pic30-nonfree
 cp -Rv ./pic30-nonfree $prefix/pic30-nonfree
 
+rm -fr $prefix/device_files
+ln -s $prefix/pic30-nonfree/bin/device_files $prefix/
 rm -f $prefix/c30_device.info
 ln -s $prefix/pic30-nonfree/bin/c30_device.info $prefix/
-rm -fdr $prefix/libexec/gcc/pic30-coff/4.0.3/device_files
+rm -fr $prefix/libexec/gcc/pic30-coff/4.0.3/device_files
 ln -s $prefix/pic30-nonfree/bin/device_files $prefix/libexec/gcc/pic30-coff/4.0.3/
 rm -f $prefix/libexec/gcc/pic30-coff/4.0.3/c30_device.info
 ln -s $prefix/pic30-nonfree/bin/c30_device.info $prefix/libexec/gcc/pic30-coff/4.0.3/
