@@ -1,13 +1,12 @@
 all: build
 
 .PHONY : build
-build: 
+build:
 	@scripts/build.sh
 
 .PHONY : install
 install:
 	@scripts/install.sh
-	@scripts/make-bin-links.sh
 	@scripts/nonfree.sh
 
 .PHONY : nonfree
