@@ -166,3 +166,14 @@ ln -s $prefix/bin/pic30-coff-bin2hex /usr/local/bin/pic30-coff-bin2hex
 rm -f /usr/local/bin/pic30-elf-bin2hex
 ln -s $prefix/bin/pic30-elf-bin2hex /usr/local/bin/pic30-elf-bin2hex
 
+# c30_device.info
+if [ -f $prefix/c30_device.info ]; then
+  rm -f /usr/local/bin/c30_device.info
+  ln -s $prefix/c30_device.info /usr/local/bin/c30_device.info
+fi
+
+# device_info
+if [ -d $prefix/device_files ]; then
+  rm -fr /usr/local/bin/device_files
+  ln -s $prefix/device_files /usr/local/bin/device_files
+fi
